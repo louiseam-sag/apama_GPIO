@@ -32,7 +32,7 @@ namespace
 void GPIOPlugin::interruptCallback(int pin) {
 	std::ostringstream oss;
 	oss << "com.apamax.rpi.gpio.Interrupt(" << pin << ")";
-	getCorrelator().sendEvent(oss.str());
+	getCorrelator().sendEventTo(oss.str(), "");
 }
 
 void GPIOPlugin::initialize(base_plugin_t::method_data_t & md)
